@@ -1,0 +1,28 @@
+<mat-card class="home mat-elevation-z3">
+    <mat-card-title class="titulo">
+        Dados do vendedor
+    </mat-card-title>
+
+    <ul>
+        <li><strong>Nome Vendedor: </strong> {{ vendedor.nome }}</li>
+        <li><strong>Código Vendedor: </strong>{{ vendedor.codigo }}</li><br>
+        <li><strong>Produtos:</strong></li>
+        <ul *ngFor="let produto of vendedor.produtoList">
+            <li>
+                <strong>Nome: </strong> {{ produto.nome }}
+            </li>
+            <li>
+                <strong>Código produto: </strong> {{ produto.codigo }}
+            </li><br>
+        </ul>
+        <li><strong>Clientes:</strong></li>
+        <ul *ngFor="let cliente of vendedor.clienteList">
+            <li>
+                <strong>Nome: </strong> {{ cliente.nome }}
+            </li>
+            <li>
+                <strong>Código Cliente: </strong> {{ cliente.codigo }}
+            </li><br>
+        </ul>
+    </ul>
+</mat-card>
