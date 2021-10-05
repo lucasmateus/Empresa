@@ -25,15 +25,28 @@ export class VendedorService {
   }
 
   create(vendedor: Vendedor): Observable<Vendedor>{
-    return this.http.post<Vendedor>(this.baseUrl + "/create", vendedor)
+    return this.http.post<Vendedor>(this.baseUrl + "/create", vendedor);
   }
 
   list(): Observable<Vendedor[]>{
-    return this.http.get<Vendedor[]>(this.baseUrl + "/all")
+    return this.http.get<Vendedor[]>(this.baseUrl + "/all");
   }
 
   view(id: string): Observable<Vendedor>{
-    const url = `${this.baseUrl}/${id}`
-    return this.http.get<Vendedor>(url)
+    const url = `${this.baseUrl}/${id}`;
+    
+    return this.http.get<Vendedor>(url);
+  }
+
+  update(vendedor: Vendedor): Observable<Vendedor> {
+    const url = `${this.baseUrl}/${vendedor.id}`;
+
+    return this.http.put<Vendedor>(url, vendedor);
+  }
+
+  delete(id: number): Observable<Vendedor> {
+    const url = `${this.baseUrl}/${id}`;
+
+    return this.http.delete<Vendedor>(url);
   }
 }

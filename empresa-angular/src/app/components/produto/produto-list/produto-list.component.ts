@@ -11,7 +11,7 @@ export class ProdutoListComponent implements OnInit {
 
   produtoList: Produto[]
 
-  displayedColumns: string[] = ['id', 'nome', 'codigo'];
+  displayedColumns: string[] = ['id', 'nome', 'codigo', 'acoes'];
 
   constructor(private ProdutoService: ProdutoService) { this.produtoList = [] }
 

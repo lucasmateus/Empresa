@@ -1,6 +1,6 @@
 <mat-card>
     <mat-card-title>
-        Cadastrar Cliente
+        Atualizar Cliente
     </mat-card-title>
     <form>
         <mat-form-field>
@@ -9,15 +9,8 @@
         <mat-form-field>
             <input matInput placeholder="Codigo" [(ngModel)]="cliente.codigo" name="codigo">
         </mat-form-field>
-        <h4>Vendedor:</h4>
-        <mat-form-field>
-            <mat-label>Escolha um</mat-label>
-            <mat-select [(ngModel)]="cliente.vendedor" name="vendedor">
-                <mat-option *ngFor="let vendedor of vendedorList" [value]="vendedor">{{ vendedor.nome }}</mat-option>
-            </mat-select>
-        </mat-form-field>
     </form>
-    <button mat-raised-button (click) = "createCliente()" color="primary">
+    <button mat-raised-button (click) = "updateCliente()" color="primary">
         Salvar
     </button>
 

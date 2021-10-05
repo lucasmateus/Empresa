@@ -41,7 +41,7 @@ public class ClienteService {
         return newObj;
     }
 
-    private Cliente findById(Long id) {
+    public Cliente findById(Long id) {
         Cliente cliente = clienteRepository.findById(id).orElseThrow();
 
         return cliente;

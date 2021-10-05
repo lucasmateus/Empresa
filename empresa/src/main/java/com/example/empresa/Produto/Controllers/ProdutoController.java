@@ -2,6 +2,7 @@ package com.example.empresa.Produto.Controllers;
 
 import com.example.empresa.Produto.Models.Produto;
 import com.example.empresa.Produto.Services.ProdutoService;
+import com.example.empresa.Vendedor.Models.Vendedor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,6 +27,13 @@ public class ProdutoController {
         return ResponseEntity.ok().body(produtoList);
     }
 
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<?> findById(@PathVariable Long id){
+        Produto produto = produtoService.findById(id);
+
+        return ResponseEntity.ok().body(produto);
+    }
+
     @PostMapping("/create")
     public ResponseEntity<Void> create(@RequestBody Produto produto){
         produto = produtoService.create(produto);
@@ -40,7 +48,7 @@ public class ProdutoController {
     public ResponseEntity<?> deleteById(@PathVariable Long id){
         produtoService.deleteById(id);
 
-        return ResponseEntity.ok().body("Deletado");
+        return ResponseEntity.noContent().build();
     }
 
     //Atualizar por id

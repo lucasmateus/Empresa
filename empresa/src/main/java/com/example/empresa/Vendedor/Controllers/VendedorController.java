@@ -57,11 +57,12 @@ public class VendedorController {
         return ResponseEntity.ok().body(vendedor);
     }
 
+
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<?> deleteById(@PathVariable Long id){
         vendedorService.deleteById(id);
 
-        return ResponseEntity.ok().body("Deletado");
+        return ResponseEntity.noContent().build();
     }
 
     //Atualizar por id

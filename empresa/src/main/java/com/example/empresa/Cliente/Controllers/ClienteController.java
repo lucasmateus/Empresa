@@ -2,6 +2,7 @@ package com.example.empresa.Cliente.Controllers;
 
 import com.example.empresa.Cliente.Models.Cliente;
 import com.example.empresa.Cliente.Services.ClienteService;
+import com.example.empresa.Produto.Models.Produto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,6 +27,13 @@ public class ClienteController {
         return ResponseEntity.ok().body(clienteList);
     }
 
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<?> findById(@PathVariable Long id){
+        Cliente cliente = clienteService.findById(id);
+
+        return ResponseEntity.ok().body(cliente);
+    }
+
     @PostMapping("/create")
     public ResponseEntity<Void> create(@RequestBody Cliente cliente){
         cliente = clienteService.create(cliente);
@@ -39,7 +47,7 @@ public class ClienteController {
     public ResponseEntity<?> deleteById(@PathVariable Long id){
         clienteService.deleteById(id);
 
-        return ResponseEntity.ok().body("Deletado");
+        return ResponseEntity.noContent().build();
     }
 
     //Atualizar por id

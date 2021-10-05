@@ -36,9 +36,9 @@ export class ClienteCreateComponent implements OnInit {
     })
   }
 
-  createProduto(): void {
+  createCliente(): void {
     this.clienteService.create(this.cliente).subscribe(() => {
-        this.VendedorService.showMessage('Produto criado com sucesso!')
+        this.clienteService.showMessage('Cliente criado com sucesso!')
         this.router.navigate(['cliente'])  
     })
   }

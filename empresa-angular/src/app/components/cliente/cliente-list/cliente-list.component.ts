@@ -11,7 +11,7 @@ export class ClienteListComponent implements OnInit {
 
   clienteList: Cliente[]
 
-  displayedColumns: string[] = ['id', 'nome', 'codigo'];
+  displayedColumns: string[] = ['id', 'nome', 'codigo', 'acoes'];
 
   constructor(private clienteService: ClienteService) { 
     this.clienteList = []
@@ -21,6 +21,10 @@ export class ClienteListComponent implements OnInit {
     this.clienteService.list().subscribe(clienteList => {
       this.clienteList = clienteList
     })
+  }
+
+  delete(id: number): void {
+    this.clienteService.delete(id);
   }
 
 }

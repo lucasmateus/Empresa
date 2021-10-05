@@ -26,13 +26,19 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
+import { MatDialogModule } from '@angular/material/dialog';
 import { VendedorlistComponent } from './components/vendedor/vendedorlist/vendedorlist.component';
 import { ProdutoCreateComponent } from './components/produto/produto-create/produto-create.component';
 import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
 import { ProdutoListComponent } from './components/produto/produto-list/produto-list.component';
 import { ClienteListComponent } from './components/cliente/cliente-list/cliente-list.component';
 import { VendedorItemComponent } from './components/vendedor/vendedor-item/vendedor-item.component';
+import { VendedorUpdateComponent } from './components/vendedor/vendedor-update/vendedor-update.component';
+import { ProdutoUpdateComponent } from './components/produto/produto-update/produto-update.component';
+import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
+import { ClienteDeleteComponent } from './components/cliente/cliente-delete/cliente-delete.component';
+import { ProdutoDeleteComponent } from './components/produto/produto-delete/produto-delete.component';
+import { VendedorDeleteComponent } from './components/vendedor/vendedor-delete/vendedor-delete.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +56,13 @@ import { VendedorItemComponent } from './components/vendedor/vendedor-item/vende
     ClienteCreateComponent,
     ProdutoListComponent,
     ClienteListComponent,
-    VendedorItemComponent
+    VendedorItemComponent,
+    VendedorUpdateComponent,
+    ProdutoUpdateComponent,
+    ClienteUpdateComponent,
+    ClienteDeleteComponent,
+    ProdutoDeleteComponent,
+    VendedorDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +81,8 @@ import { VendedorItemComponent } from './components/vendedor/vendedor-item/vende
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

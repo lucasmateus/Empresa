@@ -1,3 +1,9 @@
+import { VendedorDeleteComponent } from './components/vendedor/vendedor-delete/vendedor-delete.component';
+import { ProdutoDeleteComponent } from './components/produto/produto-delete/produto-delete.component';
+import { ClienteDeleteComponent } from './components/cliente/cliente-delete/cliente-delete.component';
+import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
+import { ProdutoUpdateComponent } from './components/produto/produto-update/produto-update.component';
+import { VendedorUpdateComponent } from './components/vendedor/vendedor-update/vendedor-update.component';
 import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
 import { VendedorItemComponent } from './components/vendedor/vendedor-item/vendedor-item.component';
 import { VendedorcreateComponent } from './components/vendedor/vendedorcreate/vendedorcreate.component';
@@ -28,6 +34,14 @@ const routes: Routes = [
     component: VendedorItemComponent
   },
   {
+    path: "vendedor/update/:id",
+    component: VendedorUpdateComponent
+  },
+  {
+    path: "vendedor/delete/:id",
+    component: VendedorDeleteComponent
+  },
+  {
     path: "cliente",
     component: ClienteComponent
   },
@@ -36,12 +50,28 @@ const routes: Routes = [
     component: ClienteCreateComponent
   },
   {
+    path: "cliente/update/:id",
+    component: ClienteUpdateComponent
+  },
+  {
+    path: "cliente/delete/:id",
+    component: ClienteDeleteComponent
+  },
+  {
     path: "produto",
     component: ProdutoComponent
   },
   {
+    path: "produto/update/:id",
+    component: ProdutoUpdateComponent
+  },
+  {
     path: "produto/create",
     component: ProdutoCreateComponent
+  },
+  {
+    path: "produto/delete/:id",
+    component: ProdutoDeleteComponent
   }
 
 ];

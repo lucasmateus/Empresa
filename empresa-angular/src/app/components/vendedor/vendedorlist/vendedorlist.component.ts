@@ -1,6 +1,8 @@
 import { VendedorService } from './../vendedor.service';
 import { Component, OnInit } from '@angular/core';
 import { Vendedor } from '../vendedor.model';
+import { Router } from '@angular/router'
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-vendedorlist',
@@ -13,7 +15,7 @@ export class VendedorlistComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'nome', 'codigo', 'acoes'];
 
-  constructor(private VendedorService: VendedorService) {
+  constructor(private VendedorService: VendedorService, private router: Router, private dialog: MatDialog) {
     this.vendedorList = [];
    }
 
@@ -22,5 +24,4 @@ export class VendedorlistComponent implements OnInit {
       this.vendedorList = listVendedor
     })
   }
-
 }

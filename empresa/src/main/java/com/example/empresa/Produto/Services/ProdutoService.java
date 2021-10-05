@@ -42,7 +42,7 @@ public class ProdutoService {
         return newObj;
     }
 
-    private Produto findById(Long id) {
+    public Produto findById(Long id) {
         Produto produto = produtoRepository.findById(id).orElseThrow();
 
         return produto;

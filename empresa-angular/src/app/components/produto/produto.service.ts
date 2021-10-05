@@ -13,11 +13,39 @@ export class ProdutoService {
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
+  showMessage(msg: string): void {
+    this.snackBar.open(
+      msg, 'X', {
+      duration: 3000,
+      horizontalPosition: "right",
+      verticalPosition: "top"
+    }
+    )
+  }
+
+  view(id: string): Observable<Produto>{
+    const url = `${this.baseUrl}/${id}`;
+    
+    return this.http.get<Produto>(url);
+  }
+
   list(): Observable<Produto[]>{
     return this.http.get<Produto[]>(this.baseUrl + "/all")
   }
 
   create(produto: Produto): Observable<Produto>{
     return this.http.post<Produto>(this.baseUrl + "/create", produto)
+  }
+
+  update(produto: Produto): Observable<Produto> {
+    const url = `${this.baseUrl}/${produto.id}`;
+
+    return this.http.put<Produto>(url, produto);
+  }
+
+  delete(id: number): Observable<Produto> {
+    const url = `${this.baseUrl}/${id}`;
+
+    return this.http.delete<Produto>(url);
   }
 }
